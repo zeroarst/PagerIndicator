@@ -16,14 +16,14 @@ import android.widget.RelativeLayout;
 
 public class PagerIndicatorLayout extends RelativeLayout {
 
-    onItemSelectListener mListener;
+    OnItemSelectListener mListener;
 
-    public interface onItemSelectListener {
+    public interface OnItemSelectListener {
 
         void onSelected(View v, int position);
     }
 
-    public void setItemSelectListener(onItemSelectListener listener) {
+    public void setItemSelectListener(OnItemSelectListener listener) {
         this.mListener = listener;
     }
 
