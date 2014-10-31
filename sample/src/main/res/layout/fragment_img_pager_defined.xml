@@ -1,0 +1,88 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    tools:context=".MainActivity">
+
+
+    <lab.royliao.pagerindicator.PagerIndicatorLayout
+        android:id="@+id/pi"
+        xmlns:pagerIndicator="http://schemas.android.com/apk/res-auto"
+        style="@style/PagerIndicatorLayout"
+        pagerIndicator:selector_id="@+id/iv_selector">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbarThumbHorizontal="@android:color/transparent">
+
+            <LinearLayout
+                android:id="@+id/lo_container"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/img1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center"
+                    android:src="@android:drawable/ic_menu_mapmode" />
+
+                <ImageView
+                    android:id="@+id/img2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center"
+                    android:src="@android:drawable/ic_menu_myplaces" />
+
+                <ImageView
+                    android:id="@+id/img3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center"
+                    android:src="@android:drawable/ic_menu_my_calendar" />
+
+                <ImageView
+                    android:id="@+id/img4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center"
+                    android:src="@android:drawable/ic_menu_help" />
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <ImageView
+            android:id="@+id/iv_selector"
+            android:layout_width="70dp"
+            android:background="@drawable/bg_selector_rect_light_blue_bottom_gap"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true" />
+
+        <ImageView
+            android:id="@+id/iv_gradient"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/bg_gradient_mid" />
+
+    </lab.royliao.pagerindicator.PagerIndicatorLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/pi"></android.support.v4.view.ViewPager>
+
+</RelativeLayout>

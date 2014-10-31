@@ -1,0 +1,79 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_selector_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_border_bottom_gray"
+            android:text="Selector style"
+            android:textColor="#FFF"
+            android:textSize="20sp" />
+
+        <RadioGroup
+            android:id="@+id/rb_selector_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rb_transparent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="transparent"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/rb_bottom_border"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="bottom border"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/rb_rectangle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rectangle"
+                android:textSize="18sp" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tv_pager_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_border_bottom_gray"
+            android:text="Pager gradient"
+            android:layout_marginTop="20dp"
+            android:textColor="#FFF"
+            android:textSize="20sp" />
+
+        <CheckBox
+            android:id="@+id/cb_pager_bg_gradient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pager background"
+            android:textColor="#FFF"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/cb_pager_border_gradient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pager border"
+            android:textColor="#FFF"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
+
+</ScrollView>

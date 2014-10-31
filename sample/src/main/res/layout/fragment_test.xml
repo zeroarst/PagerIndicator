@@ -1,0 +1,80 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:clickable="true"
+    tools:context=".MainActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/lo_pager"
+        style="@style/PagerIndicatorLayout"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@null">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_gradient_center"
+            android:scrollbarThumbHorizontal="@android:color/transparent">
+
+            <LinearLayout
+                android:id="@+id/lo_container"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:paddingLeft="150dp"
+                android:paddingRight="150dp"
+                android:layout_gravity="right"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Pager"
+                    android:text="Brave"
+                    android:textColor="#000" />
+
+                <TextView
+                    style="@style/Pager"
+                    android:text="Hope"
+                    android:textColor="#000" />
+
+                <TextView
+                    style="@style/Pager"
+                    android:text="Fate"
+                    android:textColor="#000" />
+
+                <TextView
+                    style="@style/Pager"
+                    android:text="Love"
+                    android:textColor="#000" />
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <ImageView
+            android:id="@+id/iv_selector"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerInParent="true"
+            android:paddingBottom="17dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/selection1" />
+
+        <!--<ImageView-->
+        <!--android:layout_width="32dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:scaleType="center"-->
+        <!--android:src="@drawable/selection1" />-->
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/lo_pager"></android.support.v4.view.ViewPager>
+
+</RelativeLayout>

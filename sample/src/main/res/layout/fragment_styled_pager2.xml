@@ -1,0 +1,155 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:clickable="true"
+    tools:context=".MainActivity">
+
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/pi"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:background="@null">-->
+
+    <lab.royliao.pagerindicator.PagerIndicatorLayout
+        android:id="@+id/pi"
+        style="@style/PagerIndicatorLayout"
+        xmlns:pagerIndicator="http://schemas.android.com/apk/res-auto"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@null"
+        pagerIndicator:selector_id="@+id/iv_selector">
+
+        <ImageView
+            android:id="@+id/iv_bg"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/bg_gradient_center" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:scrollbarThumbHorizontal="@android:color/transparent">
+
+            <LinearLayout
+                android:id="@+id/lo_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout style="@style/FFCharacterLayout">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ff_warrior" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Warrior"
+                        android:textColor="#FFF" />
+                </LinearLayout>
+
+
+                <LinearLayout style="@style/FFCharacterLayout">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ff_knight" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Knight"
+                        android:textColor="#FFF" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FFCharacterLayout">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ff_mog" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mog"
+                        android:textColor="#FFF" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FFCharacterLayout">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ff_black_mage" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mage"
+                        android:textColor="#FFF" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FFCharacterLayout">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ff_ninja" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ninja"
+                        android:textColor="#FFF" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FFCharacterLayout">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ff_shadow" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Shadow"
+                        android:textColor="#FFF" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <ImageView
+            android:id="@+id/iv_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingRight="50dp"
+            android:paddingBottom="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ff_selector" />
+
+
+    </lab.royliao.pagerindicator.PagerIndicatorLayout>
+    <!--</RelativeLayout>-->
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/pi"></android.support.v4.view.ViewPager>
+
+</RelativeLayout>
