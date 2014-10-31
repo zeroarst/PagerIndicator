@@ -42,7 +42,7 @@ public class StyledPager1Fragment extends Fragment {
         mVRoot = inflater.inflate(R.layout.fragment_styled_pager1, container, false);
 
         mPagerIndicatorLayout = (PagerIndicatorLayout) mVRoot.findViewById(R.id.pi);
-        mPagerIndicatorLayout.setItemSelectListener(new PagerIndicatorLayout.onItemSelectListener() {
+        mPagerIndicatorLayout.setItemSelectListener(new PagerIndicatorLayout.OnItemSelectListener() {
             @Override
             public void onSelected(View v, int position) {
                 if (mViewPager.getCurrentItem() != position)

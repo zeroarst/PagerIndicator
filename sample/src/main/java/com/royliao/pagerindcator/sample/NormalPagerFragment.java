@@ -90,7 +90,7 @@ public class NormalPagerFragment extends Fragment {
 
         //init pager indicator layout
         mPagerIndicatorLayout = (PagerIndicatorLayout) mVRoot.findViewById(R.id.pi);
-        mPagerIndicatorLayout.setItemSelectListener(new PagerIndicatorLayout.onItemSelectListener() {
+        mPagerIndicatorLayout.setItemSelectListener(new PagerIndicatorLayout.OnItemSelectListener() {
             @Override
             public void onSelected(View v, int position) {
                 mViewPager.setCurrentItem(position);
