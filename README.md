@@ -9,9 +9,10 @@ Usage
 1. You need to specify a selector id with `selector_id` attribute and at least a `HorizontalScrollView`.
 2. `PagerIndicatorLayout` extendes from `RelativeLayout`, which means your can put your selector view wherever you want. 
 3. Typically you would specify a layout as a pager container in `HorizontalScrollView`, `LinearLayout` with `android:orientation="horizontal"` is easier. 
-4. If you are using `LinearLayout` as pager container, you don't need to specify `android:layout_gravity` for it although it will still work. NOTE: `android:layout_gravity="center_horizontal"` won't behave as expect.
+4. If you are using `LinearLayout` as pager container, you don't need to specify `android:layout_gravity` for it although it will still work. 
+   NOTE: `android:layout_gravity="center_horizontal"` won't behave as expect.
 5. set select callback with`PagerIndicatorLayout.setItemSelectListener(OnItemSelectListener listener)`
-5. check out `sample/` for all implementation.
+6. You can use it along with `ViewPager`. Check out `sample/` for all implementation.
 
 Ideally a layout file would be like this:
 
