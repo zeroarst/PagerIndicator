@@ -93,7 +93,7 @@ public class MainActivity extends FragmentActivity {
                         mFgMgr.beginTransaction().add(android.R.id.content, fg, FRAGMENT_TAG).addToBackStack(null).commit();
                         break;
                     case AddTextPager:
-                        fg = AddTextPagerInCodeFragment.create(R.layout.fragment_no_pager_defined, selectorBgResId,
+                        fg = NormalPagerFragment.createToAddPagers(R.layout.fragment_no_pager_defined, selectorBgResId,
                             R.drawable.bg_gradient_mid, gradientMode);
                         mFgMgr.beginTransaction().add(android.R.id.content, fg, FRAGMENT_TAG).addToBackStack(null).commit();
                         break;
