@@ -11,7 +11,6 @@ Usage
 3. Typically you would specify a layout as a pager container in HorizontalScrollView, LinearLayout with android:orientation="horizontal" is easier. 
 4. If you are using LinearLayout as pager container, you don't need to specify layout_gravity for it although it will still work. NOTE: layout_gravity="center_horizontal" won't behavior as expect.
 5. set select callback with`PagerIndicatorLayout.setItemSelectListener(OnItemSelectListener listener)`
-
 5. check out `sample/` for all implementation.
 
 Ideally a layout file would be like this:
