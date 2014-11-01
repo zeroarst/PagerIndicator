@@ -21,13 +21,15 @@ Ideally a layout file would be like this:
         android:id="@+id/lo_pi"
         style="@style/PagerIndicatorLayout"
         xmlns:pagerIndicator="http://schemas.android.com/apk/res-auto"
+        pagerIndicator:horizontalscrollview_id="@+id/hsv"
         pagerIndicator:selector_id="@+id/iv_selector">
 
         <HorizontalScrollView
+            android:id="@+id/hsv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scrollbarThumbHorizontal="@android:color/transparent">
-            <!-- a container for pager, layout_gravity="center_horizontal" won't work as expect -->
+            <!-- a container for pager, no layout_gravity defined -->
             <LinearLayout
                 android:id="@+id/lo_container"
                 android:layout_width="wrap_content"
