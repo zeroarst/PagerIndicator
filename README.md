@@ -6,12 +6,12 @@ Customize your pager view with ease.
 
 Usage
 ==============
-1. You need to specify a selector id with `selector_id` attribute and at least a `HorizontalScrollView`.
+1. You need to specify attribute `selector_id` with a view id and `horizontalscrollview_id` with a `HorizontalScrollView` id.
 2. `PagerIndicatorLayout` extendes from `RelativeLayout`, which means your can put your selector view wherever you want. 
 3. You can use any view as your selector, or even a layout.
-4. You can put decoration in `PagerIndicatorLayout` to style your pager indicator, for example, add a foreground gradient. Check `sample/` I have implmented it.
-3. Typically you would specify a layout as a pager container in `HorizontalScrollView`, `LinearLayout` with `android:orientation="horizontal"` is easier. 
-4. If you are using layout as pager container, DO NOT specify `android:layout_gravity`, otherwise it wont behave as expect.
+4. You can put decoration in `PagerIndicatorLayout` to style your pager indicator, for example, add a foreground gradient. Check `sample/` there are some implementations.
+3. You need to define a layout as a pager container in `HorizontalScrollView`, `LinearLayout` with `android:orientation="horizontal"` is easier. 
+4. If you are using `LinearLayout` as your pager container, DO NOT specify `android:layout_gravity`, otherwise it wont behave as expect.
 5. set select callback with`PagerIndicatorLayout.setItemSelectListener(OnItemSelectListener listener)`
 6. You can use it along with `ViewPager`. Check out `sample/` for all implementation.
 
@@ -63,4 +63,4 @@ Ideally a layout file would be like this:
     </com.royliao.pagerindicator.PagerIndicatorLayout>
 
 
-<img src ="http://www.mediafire.com/convkey/5362/6iw446wcca6hteafg.jpg" /><img src ="http://www.mediafire.com/convkey/903b/j1qt3239h28d11ffg.jpg" /><img src ="http://www.mediafire.com/convkey/dfaa/j83o6dacd1erqh9fg.jpg" /><img src ="http://www.mediafire.com/convkey/45f5/a75vmg9l3cc2p2afg.jpg" /><img src ="http://www.mediafire.com/convkey/5789/qckb9b41ec938e9fg.jpg" /><img src ="http://www.mediafire.com/convkey/cccd/30fgz6ml1voco3zfg.jpg" />
+<img src ="http://www.mediafire.com/convkey/5362/6iw446wcca6hteafg.jpg" /><img src ="http://www.mediafire.com/convkey/903b/j1qt3239h28d11ffg.jpg" /><img src ="http://www.mediafire.com/convkey/dfaa/j83o6dacd1erqh9fg.jpg" /><img src ="http://www.mediafire.com/convkey/45f5/a75vmg9l3cc2p2afg.jpg" /><img src ="http://www.mediafire.com/convkey/7049/xkm7a0pns7q9vg1fg.jpg" /><img src ="http://www.mediafire.com/convkey/5789/qckb9b41ec938e9fg.jpg" /><img src ="http://www.mediafire.com/convkey/cccd/30fgz6ml1voco3zfg.jpg" />
