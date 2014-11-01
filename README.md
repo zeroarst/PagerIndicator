@@ -11,8 +11,7 @@ Usage
 3. You can use any view as your selector, or even a layout.
 4. You can put decoration in `PagerIndicatorLayout` to style your pager indicator, for example, add a foreground gradient. Check `sample/` I have implmented it.
 3. Typically you would specify a layout as a pager container in `HorizontalScrollView`, `LinearLayout` with `android:orientation="horizontal"` is easier. 
-4. If you are using `LinearLayout` as pager container, you don't need to specify `android:layout_gravity` for it although it will still work. 
-   NOTE: `android:layout_gravity="center_horizontal"` won't behave as expect.
+4. If you are using layout as pager container, DO NOT specify `android:layout_gravity`, otherwise it wont behave as expect.
 5. set select callback with`PagerIndicatorLayout.setItemSelectListener(OnItemSelectListener listener)`
 6. You can use it along with `ViewPager`. Check out `sample/` for all implementation.
 
