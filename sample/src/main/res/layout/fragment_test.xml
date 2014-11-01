@@ -27,7 +27,6 @@
                 android:layout_height="50dp"
                 android:paddingLeft="150dp"
                 android:paddingRight="150dp"
-                android:layout_gravity="right"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -75,6 +74,6 @@
         android:id="@+id/vp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/lo_pager"></android.support.v4.view.ViewPager>
+        android:layout_below="@+id/lo_pager" />
 
 </RelativeLayout>

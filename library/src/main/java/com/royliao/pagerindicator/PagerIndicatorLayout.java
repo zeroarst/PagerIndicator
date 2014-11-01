@@ -37,9 +37,9 @@ public class PagerIndicatorLayout extends RelativeLayout {
 
     int mSelectorCenterX;
 
+    int mHorizontalScrollViewId = 0;
     HorizontalScrollView mHsv;
 
-    View mVContainer;
     ViewGroup mLoContainer;
 
     View mSelectedView;
@@ -84,6 +84,10 @@ public class PagerIndicatorLayout extends RelativeLayout {
             mSelectorId = a.getResourceId(R.styleable.PagerIndicator_selector_id, 0);
             if (mSelectorId == 0)
                 throw new RuntimeException("You must specify the selector id");
+
+            mHorizontalScrollViewId = a.getResourceId(R.styleable.PagerIndicator_horizontalscrollview_id, 0);
+            if (mHorizontalScrollViewId == 0)
+                throw new RuntimeException("You must specify the HorizontalScrollView id");
             a.recycle();
         }
     }
@@ -156,35 +160,76 @@ public class PagerIndicatorLayout extends RelativeLayout {
                 throw new RuntimeException("Could not find selector view");
         }
 
+        if (mHsv == null) {
+            //find out HorizontalScrollView
+            View v = findViewById(mHorizontalScrollViewId);
+            if (v == null || !(v instanceof HorizontalScrollView))
+                throw new RuntimeException("Could not find horizontalScrollView");
+
+            mHsv = (HorizontalScrollView) v;
+            for (int i = 0; i < mHsv.getChildCount(); i++) {
+                v = mHsv.getChildAt(i);
+                if (v instanceof ViewGroup) {
+                    mLoContainer = (ViewGroup) v;
+                    break;
+                }
+            }
+            if (mLoContainer == null)
+                throw new RuntimeException("You must specify a layout in the horizontalScrollView");
+
+            //int selectorLeftToCenterX = mVSelector.getLeft() + mVSelector.getWidth() / 2;
+            //int selectorRightToCenterX = getWidth() - mVSelector.getRight() + mVSelector.getWidth() / 2;
+            //
+            //View firstView = mLoContainer.getChildAt(0);
+            //
+            ////int[] loc = new int[2];
+            ////firstView.getLocationInWindow(loc);
+            //
+            ////MarginLayoutParams mgLp;
+            //
+            ////mgLp = (MarginLayoutParams) firstView.getLayoutParams();
+            ////int margin = mgLp.leftMargin;
+            //int firstViewLeftToCenterX = firstView.getLeft() + firstView.getWidth() / 2;
+            //int leftPadding = selectorLeftToCenterX - firstViewLeftToCenterX;
+            //if (leftPadding < 0)
+            //    leftPadding = 0;
+            //
+            //View lastView = mLoContainer.getChildAt(mLoContainer.getChildCount() - 1);
+            //
+            ////loc = new int[2];
+            ////lastView.getLocationInWindow(loc);
+            ////mgLp = (MarginLayoutParams) lastView.getLayoutParams();
+            ////margin = mgLp.rightMargin;
+            ////int lastViewWidth = lastView.getWidth() / 2;
+            //int lastViewRightToCenterX = mLoContainer.getWidth() - lastView.getRight() + lastView.getWidth() / 2;
+            //int rightPadding = selectorRightToCenterX - lastViewRightToCenterX;
+            //if (rightPadding < 0)
+            //    rightPadding = 0;
+            //
+            //mLoContainer.setPadding(leftPadding, 0, rightPadding, 0);
+            //mHsv.invalidate();
+            //mHsv.requestLayout();
+        }
+
+
         int[] selectorLoc = new int[2];
         mVSelector.getLocationInWindow(selectorLoc);
         mSelectorCenterX = selectorLoc[0] + mVSelector.getWidth() / 2;
 
-        if (mHsv == null) {
-            //find out HorizontalScrollView
-            for (int i = 0; i < getChildCount(); i++) {
-                View v = getChildAt(i);
-                if (v instanceof HorizontalScrollView) {
-                    mHsv = (HorizontalScrollView) v;
-                    mVContainer = mHsv.getChildAt(0);
-                    break;
-                }
-            }
-            if (mHsv == null)
-                throw new RuntimeException("There is no HorizontalScrollView in your layout");
-        }
+        initChildViewClickEvent();
+        initTouchListener();
 
-        //Container is not a ViewGroup possibly
-        if (mLoContainer == null && mVContainer instanceof ViewGroup) {
-            mLoContainer = (ViewGroup) mVContainer;
-            mLoContainer.setPadding(0, 0, 0, 0);
+        //mNeedSynced = true;
+        post(mRunnable);
 
-            initChildViewClickEvent();
-            initTouchListener();
-        }
+        //if (mSelectedPosition != mSelectedNewSPosition)
+        //    syncSelectedPosition();
 
-        if (mLoContainer != null && mLoContainer.getChildCount() > 0) {
+    }
 
+    Runnable mRunnable = new Runnable() {
+        @Override
+        public void run() {
             int selectorLeftToCenterX = mVSelector.getLeft() + mVSelector.getWidth() / 2;
             int selectorRightToCenterX = getWidth() - mVSelector.getRight() + mVSelector.getWidth() / 2;
 
@@ -218,9 +263,10 @@ public class PagerIndicatorLayout extends RelativeLayout {
 
             mNeedSynced = true;
 
+            //if (mSelectedPosition != mSelectedNewSPosition)
+            //    syncSelectedPosition();
         }
-
-    }
+    };
 
     public static final String ARGS_SELECTED_NEW_POSITION = "ARGS_SELECTED_NEW_POSITION";
     public static final String ARGS_INSTANCE_STATE = "ARGS_INSTANCE_STATE";

@@ -146,7 +146,7 @@ public class NormalPagerFragment extends Fragment {
     }
 
     private void addTextPagers() {
-        for (int i = 0; i < mPgrAdpt.getCount(); i++) {
+        for (int i = 0; i < 4; i++) {
             TextView tv = new TextView(getActivity());
             int pd = CommonUtils.convertDipToPx(getActivity(), 15);
             tv.setPadding(pd, 0, pd, 0);
@@ -156,7 +156,7 @@ public class NormalPagerFragment extends Fragment {
             tv.setGravity(Gravity.CENTER);
             tv.setTextSize(16);
             tv.setTextColor(Color.WHITE);
-            tv.setText(mPgrAdpt.getPageTitle(i));
+            tv.setText("Pager" + (i + 1));
             mLoContainer.addView(tv, lp);
         }
     }

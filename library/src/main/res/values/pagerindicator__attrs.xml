@@ -20,6 +20,7 @@
 
     <declare-styleable name="PagerIndicator">
         <attr name="selector_id" format="reference" />
+        <attr name="horizontalscrollview_id" format="reference" />
     </declare-styleable>
 
 </resources>

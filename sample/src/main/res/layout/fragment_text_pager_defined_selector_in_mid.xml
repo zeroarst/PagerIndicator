@@ -10,15 +10,16 @@
         android:id="@+id/pi"
         style="@style/PagerIndicatorLayout"
         xmlns:pagerIndicator="http://schemas.android.com/apk/res-auto"
+        pagerIndicator:horizontalscrollview_id="@+id/hv"
         pagerIndicator:selector_id="@+id/iv_selector">
 
         <HorizontalScrollView
+            android:id="@+id/hv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scrollbarThumbHorizontal="@android:color/transparent">
 
             <LinearLayout
-                android:layout_gravity="right"
                 android:id="@+id/lo_container"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -62,6 +63,6 @@
         android:id="@+id/vp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/pi"></android.support.v4.view.ViewPager>
+        android:layout_below="@+id/pi" />
 
 </RelativeLayout>

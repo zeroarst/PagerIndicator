@@ -111,6 +111,10 @@ public class MainActivity extends FragmentActivity {
                         StyledPager2Fragment styledPgr2Fg = StyledPager2Fragment.create();
                         mFgMgr.beginTransaction().add(android.R.id.content, styledPgr2Fg, FRAGMENT_TAG).addToBackStack(null).commit();
                         break;
+                    //case Test:
+                    //    TestFragment testFg = TestFragment.create();
+                    //    mFgMgr.beginTransaction().add(android.R.id.content, testFg, FRAGMENT_TAG).addToBackStack(null).commit();
+                    //    break;
                     default:
                         break;
                 }
@@ -124,10 +128,11 @@ public class MainActivity extends FragmentActivity {
     public static enum DemoItem {
         TextPagerSelectorInMiddle("Text pager, selector in middle"),
         TextPagerSelectorOnLeft("Text pager, selector on left"),
-        AddTextPager("Add text pager programmatically"),
+        AddTextPager("Add text pager in code"),
         IconPager("Icon pager"),
         StyledPager1("Styled pager 1"),
         StyledPager2("Styled pager 2");
+        //Test("Test");
 
         String text;
 

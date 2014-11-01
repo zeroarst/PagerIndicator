@@ -39,7 +39,7 @@ public class TestFragment extends Fragment {
 
         mVRoot = inflater.inflate(R.layout.fragment_test, container, false);
 
-        mLoPager = (ViewGroup) mVRoot.findViewById(R.id.pi);
+        mLoPager = (ViewGroup) mVRoot.findViewById(R.id.lo_pager);
 
         mLoContainer = (ViewGroup) mLoPager.findViewById(R.id.lo_container);
 
