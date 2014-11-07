@@ -177,38 +177,6 @@ public class PagerIndicatorLayout extends RelativeLayout {
             if (mLoContainer == null)
                 throw new RuntimeException("You must specify a layout in the horizontalScrollView");
 
-            //int selectorLeftToCenterX = mVSelector.getLeft() + mVSelector.getWidth() / 2;
-            //int selectorRightToCenterX = getWidth() - mVSelector.getRight() + mVSelector.getWidth() / 2;
-            //
-            //View firstView = mLoContainer.getChildAt(0);
-            //
-            ////int[] loc = new int[2];
-            ////firstView.getLocationInWindow(loc);
-            //
-            ////MarginLayoutParams mgLp;
-            //
-            ////mgLp = (MarginLayoutParams) firstView.getLayoutParams();
-            ////int margin = mgLp.leftMargin;
-            //int firstViewLeftToCenterX = firstView.getLeft() + firstView.getWidth() / 2;
-            //int leftPadding = selectorLeftToCenterX - firstViewLeftToCenterX;
-            //if (leftPadding < 0)
-            //    leftPadding = 0;
-            //
-            //View lastView = mLoContainer.getChildAt(mLoContainer.getChildCount() - 1);
-            //
-            ////loc = new int[2];
-            ////lastView.getLocationInWindow(loc);
-            ////mgLp = (MarginLayoutParams) lastView.getLayoutParams();
-            ////margin = mgLp.rightMargin;
-            ////int lastViewWidth = lastView.getWidth() / 2;
-            //int lastViewRightToCenterX = mLoContainer.getWidth() - lastView.getRight() + lastView.getWidth() / 2;
-            //int rightPadding = selectorRightToCenterX - lastViewRightToCenterX;
-            //if (rightPadding < 0)
-            //    rightPadding = 0;
-            //
-            //mLoContainer.setPadding(leftPadding, 0, rightPadding, 0);
-            //mHsv.invalidate();
-            //mHsv.requestLayout();
         }
 
 
@@ -219,15 +187,11 @@ public class PagerIndicatorLayout extends RelativeLayout {
         initChildViewClickEvent();
         initTouchListener();
 
-        //mNeedSynced = true;
-        post(mRunnable);
-
-        //if (mSelectedPosition != mSelectedNewSPosition)
-        //    syncSelectedPosition();
+        post(mInitalizeRunnable);
 
     }
 
-    Runnable mRunnable = new Runnable() {
+    Runnable mInitalizeRunnable = new Runnable() {
         @Override
         public void run() {
             int selectorLeftToCenterX = mVSelector.getLeft() + mVSelector.getWidth() / 2;
@@ -235,13 +199,6 @@ public class PagerIndicatorLayout extends RelativeLayout {
 
             View firstView = mLoContainer.getChildAt(0);
 
-            //int[] loc = new int[2];
-            //firstView.getLocationInWindow(loc);
-
-            //MarginLayoutParams mgLp;
-
-            //mgLp = (MarginLayoutParams) firstView.getLayoutParams();
-            //int margin = mgLp.leftMargin;
             int firstViewLeftToCenterX = firstView.getLeft() + firstView.getWidth() / 2;
             int leftPadding = selectorLeftToCenterX - firstViewLeftToCenterX;
             if (leftPadding < 0)
@@ -249,11 +206,6 @@ public class PagerIndicatorLayout extends RelativeLayout {
 
             View lastView = mLoContainer.getChildAt(mLoContainer.getChildCount() - 1);
 
-            //loc = new int[2];
-            //lastView.getLocationInWindow(loc);
-            //mgLp = (MarginLayoutParams) lastView.getLayoutParams();
-            //margin = mgLp.rightMargin;
-            //int lastViewWidth = lastView.getWidth() / 2;
             int lastViewRightToCenterX = mLoContainer.getWidth() - lastView.getRight() + lastView.getWidth() / 2;
             int rightPadding = selectorRightToCenterX - lastViewRightToCenterX;
             if (rightPadding < 0)
@@ -262,9 +214,6 @@ public class PagerIndicatorLayout extends RelativeLayout {
             mLoContainer.setPadding(leftPadding, 0, rightPadding, 0);
 
             mNeedSynced = true;
-
-            //if (mSelectedPosition != mSelectedNewSPosition)
-            //    syncSelectedPosition();
         }
     };
 
