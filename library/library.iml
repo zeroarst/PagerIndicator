@@ -46,11 +46,11 @@
       <sourceFolder url="file://$MODULE_DIR$/../../Sniip/libs/PagerIndicator/library/src/debug/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../Sniip/libs/PagerIndicator/library/src/debug/jni" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../Sniip/libs/PagerIndicator/library/src/debug/rs" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../Sniip/libs/PagerIndicator/library/src/main/res" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Sniip/libs/PagerIndicator/src/main/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/../../Sniip/libs/PagerIndicator/library/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/../../Sniip/libs/PagerIndicator/library/src/main/assets" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/../../Sniip/libs/PagerIndicator/library/src/main/aidl" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../Sniip/libs/PagerIndicator/library/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Sniip/libs/PagerIndicator/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../Sniip/libs/PagerIndicator/library/src/main/jni" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../Sniip/libs/PagerIndicator/library/src/main/rs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../Sniip/libs/PagerIndicator/library/src/androidTest/res" type="java-test-resource" />
